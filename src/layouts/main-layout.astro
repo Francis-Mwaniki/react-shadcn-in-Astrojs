@@ -1,0 +1,65 @@
+---
+import { Navi } from '@/components/Navi';
+import '@/styles/globals.css'
+const { title } = Astro.props
+// import "@fontsource-variable/josefin-sans"
+---
+
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Digital Artist services, accessible for everyone."
+    />
+    <meta title={title} />
+  </head>
+  <body class="">
+    <Navi client:load />
+  </body>
+</html>
+<main>
+  <main class="pb-2">
+
+      <slot />
+  </main>
+
+  <!-- your content is injected here -->
+  <footer class="mt-12 bg-black px-8 py-12 md:px-16 lg:px-32">
+    <div>
+        <h2 class="text-white text-2xl font-bold">Contact</h2>
+        <p class="text-white text-sm mt-4">
+            <a href="mailto:francismwaniki630@gmail.com" class="text-white">
+                  francismwaniki630
+            </a>
+        </p>
+
+        <p class="text-white text-sm mt-4">
+            <a href="tel:+254 769982944" class="text-white">
+                  +254 769 982 944
+            </a>
+        </p>
+
+
+
+
+    </div>
+  </footer>
+</main>
+
+<style is:global>
+	:root {
+		--font-sans: 'Figtree', sans-serif;
+	}
+	body {
+		font-family: var(--font-sans);
+	}
+
+	*{
+		font-family: var(--font-sans);
+	}
+</style>
